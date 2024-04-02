@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+   
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live code</title>
+    <link rel="stylesheet" href="style.css">
+  
+    <script src="https://kit.fontawesome.com/b3b10c851f.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+    <div class="but">
+        <button><i class="fa-solid fa-cubes"></i> codecraft!!!</button>
+
+    </div>
+   
+    <div class="container">
+       
+       
+        <div class="left">
+            <label> <i class="fa-brands fa-html5"></i>   html</label>
+           
+            <textarea id="html-code" onkeyup="run()"></textarea>
+            <label><i class="fa-brands fa-css3"></i>   css</label>
+            <textarea id="css-code" onkeyup="run()"></textarea>
+            <label><i class="fa-brands fa-js"></i> js</label>
+            <textarea id="js-code" onkeyup="run()"></textarea>
+
+        </div>
+        <div class="right">
+            <label><i class="fa-solid fa-play"></i>output</label>
+            <iframe id="output" onkeyup="run()"></iframe>
+
+        </div>
+
+
+    </div>
+    <script>
+        function run(){
+            let html=document.getElementById("html-code").value;
+            let css=document.getElementById("css-code").value;
+            let js=document.getElementById("js-code").value;
+            let output=document.getElementById("output");
+           
+            output.contentDocument.body.innerHTML=html+"<style>"+css+"</style>";
+            output.contentWindow.eval(js);
+
+        }
+    </script>
+
+   </body>
+
+</html>
